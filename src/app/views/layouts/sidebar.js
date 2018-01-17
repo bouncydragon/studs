@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import { NavLink } from 'react-router-dom';
 import HeaderLinks from './links';
 
 import imagine from '../../../assets/img/sidebar-3.jpg';
@@ -48,11 +48,15 @@ class Sidebar extends Component{
             {
               appRoutes.map((prop,key) => {
                 if(!prop.redirect)
-                  return (
-                    <li className={"active active-pro"} key={key}>
-
-                    </li>
-                  );
+                  if(!prop.redirect)
+                    return (
+                      <li className={prop.upgrade ? "active active-pro":this.activeRoute(prop.path)} key={key}>
+                        <NavLink to={prop.path} className="nav-link" activeClassName="active">
+                          <i className={prop.icon}></i>
+                          <p>{prop.name}</p>
+                        </NavLink>
+                      </li>
+                    );
                 return null;
               })
             }

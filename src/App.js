@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import {
+  HashRouter,
+  Route,
+  Switch
+} from 'react-router-dom';
 
 import './assets/css/bootstrap.min.css';
 import './assets/css/animate.min.css';
@@ -11,9 +16,11 @@ import Home from "./app/views/pages/home";
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Home />
-      </div>
+    <HashRouter>
+      <Switch>
+        <Route path="/" name="Home" component={Home}/>
+      </Switch>
+    </HashRouter>
     );
   }
 }
