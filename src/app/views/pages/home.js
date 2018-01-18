@@ -8,7 +8,7 @@ import {
   Redirect
 } from 'react-router-dom';
 
-
+// NOTE : this should be the APP
 class Home extends Component {
   render() {
     return (
