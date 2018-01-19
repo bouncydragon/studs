@@ -1,9 +1,13 @@
-import Dashboard from '../views/pages/dashboard';
+import Recompose from '../views/pages/recompose';
 import User from '../views/pages/user';
 
 const appRoutes = [
-  { path: "/dashboard", name: "Dashboard", icon: "pe-7s-graph", component: Dashboard },
-  { path: "/user", name: "User", icon: "pe-7s-user", component: User },
+  {
+    path: '/recompose', name: 'Recompose', icon: 'pe-7s-graph', component: Recompose,
+  },
+  {
+    path: '/user', name: 'User', icon: 'pe-7s-user', component: User,
+  },
 ];
 
 export default appRoutes;
