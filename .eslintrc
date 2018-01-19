@@ -19,7 +19,7 @@
   ],
   "rules" : {
     "arrow-body-style" : 'warn',
-    "prettier/prettier": ["error", { "singleQuote": true }],
+    "prettier/prettier": "error",
     "class-methods-use-this": ['error', {
       exceptMethods: [
         'render',

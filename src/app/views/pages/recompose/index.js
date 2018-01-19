@@ -16,8 +16,10 @@ class Recompose extends Component {
                 stats="Updated 3 minutes ago"
                 statsIcon="fa fa-history"
                 content={
-                  <div className="table-full-width" style={{ padding: '30px' }}>
-
+                  <div className="table-full-width" style={{ padding : "30px" }}>
+                    <div>sdsadadada</div>
+                    <div>sdsadadada</div>
+                    <div>sdsadadada</div><div>sdsadadada</div>
 
                   </div>
                 }
