@@ -13,7 +13,10 @@
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.5.0",
     "eslint-plugin-react-native": "^3.2.1",
+    "prettier": "^1.10.2",
     "react-scripts": "1.0.17"
   },
   "scripts": {

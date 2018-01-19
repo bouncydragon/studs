@@ -2,7 +2,8 @@
   "parser": "babel-eslint",
   "plugins": [
     "react",
-    "react-native"
+    "react-native",
+    "prettier"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -13,10 +14,12 @@
   "extends" : [
     "eslint:recommended",
     "plugin:react/recommended",
-    "airbnb-base"
+    "airbnb-base",
+    "prettier/react"
   ],
   "rules" : {
     "arrow-body-style" : 'warn',
+    "prettier/prettier": ["error", { "singleQuote": true }],
     "class-methods-use-this": ['error', {
       exceptMethods: [
         'render',
