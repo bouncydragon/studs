@@ -11,31 +11,31 @@ const Card = Loadable({
   loading: () => Loading
 });
 
-const Home = Loadable({
-    loader: () => import('../home'),
+const Load1 = Loadable({
+    loader: () => import('./load1'),
   loading: () => Loading
 });
 
-const enhance = compose(setDisplayName('RecomposePage'), setPropTypes({}));
+const enhance = compose(setDisplayName('loadablePage'), setPropTypes({}));
 
 const codeString = 'compose(hoc1, hoc2, hoc3)';
 
 export default enhance(({ ...props }) => (
   <div className="content">
-
     <Grid fluid>
       <Row>
         <Col lg={12} sm={12}>
+          <Load1/>
           <Card
-            title="Recompose"
-            category="coding-style"
-            source="https://github.com/acdlite/recompose/blob/master/docs/API.md"
+            title="Loadable"
+            category="optimization"
+            source="https://github.com/thejameskyle/react-loadable"
             statsIcon="fa fa-history"
             content={
               <div className="table-full-width" style={{ padding: '30px' }}>
                 <p>
-                  Recompose is a React utility belt for function components and
-                  higher-order components. Think of it like lodash for React.
+                  A higher order component for loading components with dynamic
+                  imports.
                 </p>
                 <SyntaxHighlighter language="javascript" style={docco}>
                   {codeString}

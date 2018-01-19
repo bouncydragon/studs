@@ -1,12 +1,18 @@
 import Recompose from '../views/pages/recompose';
-import User from '../views/pages/user';
+import Loadable from '../views/pages/loadable';
 
 const appRoutes = [
   {
-    path: '/recompose', name: 'Recompose', icon: 'pe-7s-graph', component: Recompose,
+    path: '/recompose',
+    name: 'Recompose',
+    icon: 'pe-7s-graph',
+    component: Recompose,
   },
   {
-    path: '/user', name: 'User', icon: 'pe-7s-user', component: User,
+    path: '/loadable',
+    name: 'Loadable',
+    icon: 'pe-7s-user',
+    component: Loadable,
   },
 ];
 

@@ -14,12 +14,10 @@
   "extends" : [
     "eslint:recommended",
     "plugin:react/recommended",
-    "airbnb-base",
-    "prettier/react"
+    "airbnb-base"
   ],
   "rules" : {
     "arrow-body-style" : 'warn',
-    "prettier/prettier": "error",
     "class-methods-use-this": ['error', {
       exceptMethods: [
         'render',
