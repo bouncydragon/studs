@@ -1,47 +1,43 @@
 import React, { Component } from 'react';
 import { Navbar } from 'react-bootstrap';
 
-
-class Header extends Component{
-  constructor(props){
+class Header extends Component {
+  constructor(props) {
     super(props);
     this.mobileSidebarToggle = this.mobileSidebarToggle.bind(this);
     this.state = {
-      sidebarExists: false
+      sidebarExists: false,
     };
   }
-  mobileSidebarToggle(e){
-    if(this.state.sidebarExists === false){
+  mobileSidebarToggle(e) {
+    if (this.state.sidebarExists === false) {
       this.setState({
-        sidebarExists : true
+        sidebarExists: true,
       });
-
     }
     e.preventDefault();
     document.documentElement.classList.toggle('nav-open');
     var node = document.createElement('div');
     node.id = 'bodyClick';
-    node.onclick = function(){
+    node.onclick = function() {
       this.parentElement.removeChild(this);
       document.documentElement.classList.toggle('nav-open');
     };
     document.body.appendChild(node);
   }
-  getBrand(){
+  getBrand() {
     return null;
   }
-  render(){
+  render() {
     return (
       <Navbar fluid>
         <Navbar.Header>
           <Navbar.Brand>
             <a href="#pablo">{this.getBrand()}</a>
           </Navbar.Brand>
-          <Navbar.Toggle onClick={this.mobileSidebarToggle}/>
+          <Navbar.Toggle onClick={this.mobileSidebarToggle} />
         </Navbar.Header>
-        <Navbar.Collapse>
-
-        </Navbar.Collapse>
+        <Navbar.Collapse />
       </Navbar>
     );
   }

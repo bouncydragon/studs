@@ -37,6 +37,7 @@
   },
   "globals": {
     "fetch": false,
-    "props": false
+    "props": false,
+    "window": false
   }
 }

@@ -18,47 +18,59 @@ class Sidebar extends Component {
     return this.props.location.pathname.indexOf(routeName) > -1 ? 'active' : '';
   }
   updateDimensions() {
-    this.setState({ width:window.innerWidth });
+    this.setState({ width: window.innerWidth });
   }
   componentDidMount() {
     this.updateDimensions();
     window.addEventListener('resize', this.updateDimensions.bind(this));
   }
-  render(){
+  render() {
     const sidebarBackground = {
       backgroundImage: 'url(' + imagine + ')',
     };
     return (
-      <div id="sidebar" className="sidebar" data-color="black" data-image={imagine}>
-        <div className="sidebar-background" style={sidebarBackground}></div>
+      <div
+        id="sidebar"
+        className="sidebar"
+        data-color="black"
+        data-image={imagine}
+      >
+        <div className="sidebar-background" style={sidebarBackground} />
         <div className="logo">
-          <a href="https://www.creative-tim.com" className="simple-text logo-mini">
+          <a
+            href="https://www.creative-tim.com"
+            className="simple-text logo-mini"
+          >
             <div className="logo-img">
-              <img src={logo} alt="logo_image"/>
+              <img src={logo} alt="logo_image" />
             </div>
-
           </a>
-          <a href="https://www.creative-tim.com" className="simple-text logo-normal">
+          <a
+            href="https://www.creative-tim.com"
+            className="simple-text logo-normal"
+          >
             STUDS
           </a>
         </div>
         <div className="sidebar-wrapper">
           <ul className="nav">
-            { this.state.width <= 991 ? (<HeaderLinks />):null }
-            {
-              appRoutes.map((prop, key) => {
-                  if (!prop.redirect)
-                    return (
-                      <li className={this.activeRoute(prop.path)} key={key}>
-                        <NavLink to={prop.path} className="nav-link" activeClassName="active">
-                          <i className={prop.icon}></i>
-                          <p>{prop.name}</p>
-                        </NavLink>
-                      </li>
-                    );
-                return null;
-              })
-            }
+            {this.state.width <= 991 ? <HeaderLinks /> : null}
+            {appRoutes.map((prop, key) => {
+              if (!prop.redirect)
+                return (
+                  <li className={this.activeRoute(prop.path)} key={key}>
+                    <NavLink
+                      to={prop.path}
+                      className="nav-link"
+                      activeClassName="active"
+                    >
+                      <i className={prop.icon} />
+                      <p>{prop.name}</p>
+                    </NavLink>
+                  </li>
+                );
+              return null;
+            })}
           </ul>
         </div>
       </div>
