@@ -8,24 +8,24 @@ import Loading from '../../components/Loading';
 
 const Card = Loadable({
   loader: () => import('../../components/Card'),
-  loading: () => Loading
+  loading: () => Loading,
 });
 
 const Load1 = Loadable({
-    loader: () => import('./load1'),
-  loading: () => Loading
+  loader: () => import('./load1'),
+  loading: () => Loading,
 });
 
 const enhance = compose(setDisplayName('loadablePage'), setPropTypes({}));
 
 const codeString = 'compose(hoc1, hoc2, hoc3)';
 
-export default enhance(({ ...props }) => (
+export default enhance(() => (
   <div className="content">
     <Grid fluid>
       <Row>
         <Col lg={12} sm={12}>
-          <Load1/>
+          <Load1 />
           <Card
             title="Loadable"
             category="optimization"

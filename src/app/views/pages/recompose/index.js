@@ -8,21 +8,15 @@ import Loading from '../../components/Loading';
 
 const Card = Loadable({
   loader: () => import('../../components/Card'),
-  loading: () => Loading
-});
-
-const Home = Loadable({
-    loader: () => import('../home'),
-  loading: () => Loading
+  loading: () => Loading,
 });
 
 const enhance = compose(setDisplayName('RecomposePage'), setPropTypes({}));
 
 const codeString = 'compose(hoc1, hoc2, hoc3)';
 
-export default enhance(({ ...props }) => (
+export default enhance(() => (
   <div className="content">
-
     <Grid fluid>
       <Row>
         <Col lg={12} sm={12}>
