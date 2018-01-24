@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Loadable from 'react-loadable';
 import { compose, setDisplayName, setPropTypes } from 'recompose';
 import { Grid, Row, Col } from 'react-bootstrap';
@@ -7,7 +7,9 @@ import { docco } from 'react-syntax-highlighter/styles/hljs';
 import Loading from '../../components/Loading';
 
 const Card = Loadable({
-  loader: () => import('../../components/Card'),
+  loader: () => {
+    import('../../components/Card');
+  },
   loading: () => Loading,
 });
 
