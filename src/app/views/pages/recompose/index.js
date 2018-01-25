@@ -7,9 +7,7 @@ import { docco } from 'react-syntax-highlighter/styles/hljs';
 import Loading from '../../components/Loading';
 
 const Card = Loadable({
-  loader: () => {
-    import('../../components/Card');
-  },
+  loader: () => import('../../components/Card'),
   loading: () => Loading,
 });
 
