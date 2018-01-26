@@ -8,7 +8,7 @@ import Loading from '../../components/Loading';
 
 const Card = Loadable({
   loader: () => import('../../components/Card'),
-  loading: () => Loading,
+  loading: Loading,
 });
 
 const enhance = compose(setDisplayName('RecomposePage'), setPropTypes({}));

@@ -1,32 +1,47 @@
 import React, { Component } from 'react';
 import Loadable from 'react-loadable';
-import { compose, setDisplayName, setPropTypes } from 'recompose';
+import { compose, setDisplayName } from 'recompose';
 import { Grid, Row, Col } from 'react-bootstrap';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/styles/hljs';
 import Loading from '../../components/Loading';
 
-const HelloWorld = Loadable({
-  loader: () => import('../loadable/loadable-component'),
+const Card = Loadable({
+  loader: () => import('../../components/Card'),
   loading: Loading,
 });
 
-const AAA = () => {
-  return (
-    <div>
-      <HelloWorld />
-    </div>
-  );
-}
+const Syntax = Loadable({
+  loader: () => import('./syntax'),
+  loading: Loading,
+});
+const enhance = compose(setDisplayName('flowPage'));
 
-// class AAA extends Component {
-//   render() {
-//     return (
-//       <div>
-//         <HelloWorld />
-//       </div>
-//     );
-//   }
-// }
-
-export default AAA;
+export default enhance(() => (
+  <div className="content">
+    <Grid fluid>
+      <Row>
+        <Col lg={12} sm={12}>
+          <Card
+            title="Flow"
+            category="static declaration"
+            source="https://github.com/facebook/flow"
+            statsIcon="fa fa-history"
+            content={
+              <div className="table-full-width" style={{ padding: '30px' }}>
+                <p>Static typing for javascript.</p>
+                <Syntax
+                  nativeType="Boolean"
+                  sampleCode="var isFetching: boolean = false;"
+                />
+                <Syntax
+                  nativeType="Number"
+                  sampleCode="var luckyNumber: number = 10;
+                              var notSoLuckyNumber: number = NaN;"
+                />
+              </div>
+            }
+          />
+        </Col>
+      </Row>
+    </Grid>
+  </div>
+));
