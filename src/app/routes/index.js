@@ -1,5 +1,6 @@
 import Recompose from '../views/pages/recompose';
 import Loadable from '../views/pages/loadable';
+import Flow from '../views/pages/flow';
 
 const appRoutes = [
   {
@@ -13,6 +14,12 @@ const appRoutes = [
     name: 'Loadable',
     icon: 'pe-7s-user',
     component: Loadable,
+  },
+  {
+    path: '/flow',
+    name: 'Flow',
+    icon: 'pe-7s-user',
+    component: Flow,
   },
 ];
 
