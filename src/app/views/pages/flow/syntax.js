@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, setDisplayName, setPropTypes } from 'recompose';
@@ -7,7 +6,7 @@ import { docco } from 'react-syntax-highlighter/styles/hljs';
 
 const enhance = compose(
   setDisplayName('flowSyntaxPage'),
-  setPropTypes({ nativeType: PropTypes.string })
+  setPropTypes({ nativeType: PropTypes.string }),
 );
 
 export default enhance(({ nativeType, sampleCode }) => (

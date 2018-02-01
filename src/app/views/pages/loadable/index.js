@@ -6,12 +6,12 @@ import Loading from '../../components/Loading';
 
 const Card = Loadable({
   loader: () => import('../../components/Card'),
-  loading: Loading
+  loading: Loading,
 });
 
 const LoadableComponent = Loadable({
   loader: () => import('./loadable-component'),
-  loading: Loading
+  loading: Loading,
 });
 
 const enhance = compose(setDisplayName('loadablePage'), setPropTypes({}));

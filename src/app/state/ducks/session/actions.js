@@ -1,6 +1,17 @@
+// @flow
 import * as types from './types';
 
-export const login = data => ({
+type auth = {
+  username: string,
+  password: string,
+};
+
+type loginAction = {
+  type: string,
+  payload: auth,
+};
+
+export const login = (data: auth): loginAction => ({
   type: types.LOGIN,
   payload: data,
 });
