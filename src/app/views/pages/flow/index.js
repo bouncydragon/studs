@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+// @flow
+import React from 'react';
 import Loadable from 'react-loadable';
 import { compose, setDisplayName } from 'recompose';
 import { Grid, Row, Col } from 'react-bootstrap';
@@ -14,6 +15,15 @@ const Syntax = Loadable({
   loading: Loading,
 });
 const enhance = compose(setDisplayName('flowPage'));
+
+const ForEachFlow = (iterate: Array<number>): Array<number> => {
+  const item = [];
+  for (let i = 0; i < iterate.length; i++) {
+    item[i] = iterate[i];
+  }
+
+  return item;
+};
 
 export default enhance(() => (
   <div className="content">
@@ -34,9 +44,19 @@ export default enhance(() => (
                 />
                 <Syntax
                   nativeType="Number"
-                  sampleCode="var luckyNumber: number = 10;
-                              var notSoLuckyNumber: number = NaN;"
+                  sampleCode="var luckyNumber: number = 10;var notSoLuckyNumber: number = NaN;"
                 />
+              </div>
+            }
+          />
+        </Col>
+        <Col lg={12} sm={12}>
+          <Card
+            title="Flow samples"
+            content={
+              <div>
+                <h3>Reduce convoluted error handling</h3>
+                {ForEachFlow([1, 2, 3])}
               </div>
             }
           />

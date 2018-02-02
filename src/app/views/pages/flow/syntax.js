@@ -6,7 +6,7 @@ import { docco } from 'react-syntax-highlighter/styles/hljs';
 
 const enhance = compose(
   setDisplayName('flowSyntaxPage'),
-  setPropTypes({ nativeType: PropTypes.string }),
+  setPropTypes({ nativeType: PropTypes.string })
 );
 
 export default enhance(({ nativeType, sampleCode }) => (

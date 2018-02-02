@@ -1,6 +1,7 @@
 import Recompose from '../views/pages/recompose';
 import Loadable from '../views/pages/loadable';
 import Flow from '../views/pages/flow';
+import Login from '../views/pages/login';
 
 const appRoutes = [
   {
@@ -20,6 +21,11 @@ const appRoutes = [
     name: 'Flow',
     icon: 'pe-7s-user',
     component: Flow,
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
   },
 ];
 
