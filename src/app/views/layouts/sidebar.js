@@ -5,7 +5,7 @@ import HeaderLinks from './links';
 import imagine from '../../../assets/img/sidebar-3.jpg';
 import logo from '../../../assets/img/reactlogo.png';
 
-import appRoutes from '../../routes';
+import appRoutes from '../../routes/sidebar';
 
 class Sidebar extends Component {
   constructor(props) {

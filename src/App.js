@@ -9,6 +9,8 @@ import './assets/css/demo.css';
 import './assets/css/pe-icon-7-stroke.css';
 
 import Home from './app/views/pages/home';
+import Login from './app/views/pages/login';
+
 import configureStore from './app/state/store';
 
 class App extends Component {
@@ -18,6 +20,7 @@ class App extends Component {
       <ReduxProvider store={store}>
         <BrowserRouter>
           <Switch>
+            <Route exact path="/login" name="Login" component={Login} />
             <Route path="/" name="Home" component={Home} />
           </Switch>
         </BrowserRouter>
