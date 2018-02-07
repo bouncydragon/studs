@@ -18,7 +18,7 @@ const enhance = compose(setDisplayName('flowPage'));
 
 const ForEachFlow = (iterate: Array<number>): Array<number> => {
   const item = [];
-  for (let i = 0; i < iterate.length; i++) {
+  for (let i = 0; i < iterate.length; i += 1) {
     item[i] = iterate[i];
   }
 
@@ -55,7 +55,7 @@ export default enhance(() => (
             title="Flow samples"
             content={
               <div>
-                <h3>Reduce convoluted error handling</h3>
+                <h4>Reduce convoluted error handling</h4>
                 {ForEachFlow([1, 2, 3])}
               </div>
             }
