@@ -1,4 +1,4 @@
-import { Flow, Loadable, Recompose } from '../views/pages';
+import { Flow, Loadable, Recompose, LabGears } from '../views/pages';
 
 const appRoutes = [
   {
@@ -18,6 +18,12 @@ const appRoutes = [
     name: 'Flow',
     icon: 'pe-7s-user',
     component: Flow,
+  },
+  {
+    path: '/labgears',
+    name: 'LabGears',
+    icon: 'pe-7s-user',
+    component: LabGears,
   },
 ];
 
