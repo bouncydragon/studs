@@ -1,5 +1,6 @@
 import React from 'react';
 import Loadable from 'react-loadable';
+import styled from 'styled-components';
 import Text from '@labgears/text';
 import { compose, setDisplayName, setPropTypes } from 'recompose';
 import { Grid, Row, Col } from 'react-bootstrap';
@@ -11,6 +12,10 @@ const Card = Loadable({
 });
 
 const enhance = compose(setDisplayName('labGearsPage'), setPropTypes({}));
+
+const StyledText = styled(Text)`
+  background: red;
+`;
 
 export default enhance(() => (
   <div className="content">
@@ -24,7 +29,7 @@ export default enhance(() => (
             statsIcon="fa fa-history"
             content={
               <div className="table-full-width" style={{ padding: '30px' }}>
-                <Text />
+                <StyledText autoComplete={true} />
               </div>
             }
           />
