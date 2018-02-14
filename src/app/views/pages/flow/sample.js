@@ -1,4 +1,4 @@
 // @flow
 let a: string;
 
-a = 'asd';
+a = 1;

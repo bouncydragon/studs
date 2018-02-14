@@ -14,7 +14,7 @@ const Card = Loadable({
 const enhance = compose(setDisplayName('labGearsPage'), setPropTypes({}));
 
 const StyledText = styled(Text)`
-  background: red;
+  border: 4px solid pink;
 `;
 
 export default enhance(() => (
@@ -28,8 +28,8 @@ export default enhance(() => (
             source="https://github.com/hanseh25/labgears"
             statsIcon="fa fa-history"
             content={
-              <div className="table-full-width" style={{ padding: '30px' }}>
-                <StyledText autoComplete={true} />
+              <div  className="table-full-width" style={{ padding: '30px' }}>
+                <StyledText error='this is an error' autoComplete={true} />
               </div>
             }
           />
