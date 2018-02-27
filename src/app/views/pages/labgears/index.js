@@ -1,7 +1,9 @@
 import React from 'react';
 import Loadable from 'react-loadable';
 import styled from 'styled-components';
+import Spinner from '@labgears/spinner';
 import Text from '@labgears/text';
+import { LabGearsThemeProvider } from '@labgears/theme';
 import { compose, setDisplayName, setPropTypes } from 'recompose';
 import { Grid, Row, Col } from 'react-bootstrap';
 import Loading from '../../components/Loading';
@@ -14,13 +16,15 @@ const Card = Loadable({
 const enhance = compose(setDisplayName('labGearsPage'), setPropTypes({}));
 
 const StyledText = styled(Text)`
-  border: 4px solid pink;
+  border: 4px solid;
 `;
 
 export default enhance(() => (
   <div className="content">
     <Grid fluid>
       <Row>
+        
+
         <Col lg={12} sm={12}>
           <Card
             title="LabGears"
@@ -29,7 +33,10 @@ export default enhance(() => (
             statsIcon="fa fa-history"
             content={
               <div  className="table-full-width" style={{ padding: '30px' }}>
-                <StyledText error='this is an error' autoComplete={true} />
+                
+                  <StyledText placeholder='I am a placeholder' error='this is an error' />
+
+                <Spinner />
               </div>
             }
           />

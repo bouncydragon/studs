@@ -7,6 +7,7 @@ import './assets/css/animate.min.css';
 import './assets/sass/light-bootstrap-dashboard.css';
 import './assets/css/demo.css';
 import './assets/css/pe-icon-7-stroke.css';
+import { LabGearsThemeProvider } from '@labgears/theme';
 
 import Home from './app/views/pages/home';
 import Login from './app/views/pages/login';
@@ -17,6 +18,7 @@ class App extends Component {
   render() {
     const store = configureStore();
     return (
+      <LabGearsThemeProvider theme='light'>
       <ReduxProvider store={store}>
         <BrowserRouter>
           <Switch>
@@ -25,6 +27,7 @@ class App extends Component {
           </Switch>
         </BrowserRouter>
       </ReduxProvider>
+      </LabGearsThemeProvider>
     );
   }
 }
